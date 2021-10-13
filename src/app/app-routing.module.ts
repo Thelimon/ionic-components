@@ -19,6 +19,22 @@ const routes: Routes = [
     path: 'action-sheet',
     loadChildren: () => import('./pages/action-sheet/action-sheet.module').then( m => m.ActionSheetPageModule)
   },
+  {
+    path: 'avatar',
+    loadChildren: () => import('./pages/avatar/avatar.module').then( m => m.AvatarPageModule)
+  },
+  {
+    path: 'buttons',
+    loadChildren: () => import('./pages/buttons/buttons.module').then( m => m.ButtonsPageModule)
+  },
+  {
+    path: 'cards',
+    loadChildren: () => import('./pages/cards/cards.module').then( m => m.CardsPageModule)
+  },
+  {
+    path: 'checks',
+    loadChildren: () => import('./pages/checks/checks.module').then( m => m.ChecksPageModule)
+  },
 ];
 
 @NgModule({
