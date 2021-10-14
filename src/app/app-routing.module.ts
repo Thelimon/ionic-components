@@ -35,6 +35,26 @@ const routes: Routes = [
     path: 'checks',
     loadChildren: () => import('./pages/checks/checks.module').then( m => m.ChecksPageModule)
   },
+  {
+    path: 'date-time',
+    loadChildren: () => import('./pages/date-time/date-time.module').then( m => m.DateTimePageModule)
+  },
+  {
+    path: 'fab',
+    loadChildren: () => import('./pages/fab/fab.module').then( m => m.FabPageModule)
+  },
+  {
+    path: 'grid',
+    loadChildren: () => import('./pages/grid/grid.module').then( m => m.GridPageModule)
+  },
+  {
+    path: 'scroll',
+    loadChildren: () => import('./pages/scroll/scroll.module').then( m => m.ScrollPageModule)
+  },
+  {
+    path: 'input',
+    loadChildren: () => import('./pages/input/input.module').then( m => m.InputPageModule)
+  },
 ];
 
 @NgModule({

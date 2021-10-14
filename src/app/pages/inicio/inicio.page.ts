@@ -42,6 +42,26 @@ export class InicioPage implements OnInit {
       name: 'Checks',
       redirectTo: '/checks',
     },
+    {
+      icon: 'calendar-outline',
+      name: 'Datetime',
+      redirectTo: '/date-time',
+    },
+    {
+      icon: 'grid-outline',
+      name: 'Grid',
+      redirectTo: '/grid',
+    },
+    {
+      icon: 'infinite-outline',
+      name: 'Scroll',
+      redirectTo: '/scroll',
+    },
+    {
+      icon: 'hammer-outline',
+      name: 'Input',
+      redirectTo: '/input',
+    },
   ];
   constructor() {}
 
