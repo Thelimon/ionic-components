@@ -1,79 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { ComponenteI } from 'src/app/interfaces/inteface';
+import { DataService } from 'src/app/services/data.service';
 
-interface ComponenteI {
-  icon: string;
-  name: string;
-  redirectTo: string;
-}
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  components: ComponenteI[] = [
-    {
-      icon: 'accessibility-outline',
-      name: 'action-sheet',
-      redirectTo: '/action-sheet',
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Alert',
-      redirectTo: '/alert',
-    },
-    {
-      icon: 'beaker-outline',
-      name: 'Avatar',
-      redirectTo: '/avatar',
-    },
-    {
-      icon: 'radio-button-off-outline',
-      name: 'Buttons',
-      redirectTo: '/buttons',
-    },
-    {
-      icon: 'card-outline',
-      name: 'Cards',
-      redirectTo: '/cards',
-    },
-    {
-      icon: 'checkmark-circle-outline',
-      name: 'Checks',
-      redirectTo: '/checks',
-    },
-    {
-      icon: 'calendar-outline',
-      name: 'Datetime',
-      redirectTo: '/date-time',
-    },
-    {
-      icon: 'grid-outline',
-      name: 'Grid',
-      redirectTo: '/grid',
-    },
-    {
-      icon: 'infinite-outline',
-      name: 'Scroll',
-      redirectTo: '/scroll',
-    },
-    {
-      icon: 'hammer-outline',
-      name: 'Input',
-      redirectTo: '/input',
-    },
-    {
-      icon: 'list-outline',
-      name: 'List',
-      redirectTo: '/list',
-    },
-    {
-      icon: 'reorder-three-outline',
-      name: 'List - Reorder',
-      redirectTo: '/list-reorder',
-    },
-  ];
-  constructor() {}
+  components: Observable<ComponenteI[]>;
 
-  ngOnInit() {}
+  constructor(private menuCtrl: MenuController, private dataSvc: DataService) {}
+
+  ngOnInit() {
+    this.components = this.dataSvc.getMenuOpts();
+  }
+
+  showMenu() {
+    this.menuCtrl.open('first');
+  }
 }
